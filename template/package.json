@@ -17,7 +17,7 @@
     "bootstrap": "v4.0.0-beta",
     "font-awesome": "^4.7.0",
     "node-sass": "^4.5.3",
-    "nuxt": "^1.0.0-rc6",
+    "nuxt": "^1.0.0-rc8",
     "pug": "^2.0.0-rc.3",
     "sass-loader": "^6.0.6"
   },
