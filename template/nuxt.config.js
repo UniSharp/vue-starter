@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const StylelintPlugin = require('stylelint-webpack-plugin')
 
 module.exports = {
@@ -29,6 +30,18 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    /*
+    ** Plugins
+    */
+    vendor: ['jquery', 'popper.js', 'bootstrap'],
+    plugins: [
+      new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery',
+        Popper: 'popper.js'
+      })
+    ],
     /*
     ** Run ESLINT and STYLELINT on save
     */

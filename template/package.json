@@ -16,8 +16,10 @@
     "axios": "^0.16.2",
     "bootstrap": "v4.0.0-beta.2",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
     "node-sass": "^4.5.3",
     "nuxt": "^1.0.0-rc11",
+    "popper.js": "^1.12.9",
     "pug": "^2.0.0-rc.3",
     "sass-loader": "^6.0.6"
   },
