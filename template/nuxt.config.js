@@ -27,6 +27,12 @@ module.exports = {
     { src: '~/assets/scss/main.scss', lang: 'scss' }
   ],
   /*
+  ** Plugins
+  */
+  plugins: [
+    '~/plugins/FontAwesome'
+  ],
+  /*
   ** Build configuration
   */
   build: {
