@@ -7,8 +7,8 @@
         .carousel-item(:class="{ active: i === 0 }", :key="i", v-for="(image, i) in images")
           img.d-block.w-100(:src="image.url")
           .carousel-caption
-            h3 {{ image.title }}
-            p.mb-0 {{ image.description }}
+            h3(v-text="image.title")
+            p.mb-0(v-text="image.description")
       a.carousel-control-prev(:href="`#${id}`", role="button", data-slide="prev")
         span.carousel-control-prev-icon(aria-hidden="true")
         span.sr-only Previous
