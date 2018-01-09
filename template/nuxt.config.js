@@ -49,10 +49,18 @@ module.exports = {
       })
     ],
     /*
-    ** Run ESLINT and STYLELINT on save
+    ** Run PUGLINT, ESLINT and STYLELINT on save
     */
     extend (config, ctx) {
       if (ctx.dev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(vue)$/,
+          loader: 'vue-pug-lint-loader',
+          options: require('./.puglintrc.js'),
+          exclude: /(node_modules)/
+        })
+
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,

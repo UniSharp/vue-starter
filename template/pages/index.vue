@@ -19,11 +19,11 @@
           .card-header
             ul.nav.nav-tabs.card-header-tabs
               li.nav-item
-                a.nav-link.active(id="nav-home-tab", data-toggle="tab", href="#nav-home", role="tab", aria-controls="nav-home", aria-selected="true") Home
+                a#nav-home-tab.nav-link.active(data-toggle="tab", href="#nav-home", role="tab", aria-controls="nav-home", aria-selected="true") Home
               li.nav-item
-                a.nav-link(id="nav-profile-tab", data-toggle="tab", href="#nav-profile", role="tab", aria-controls="nav-profile", aria-selected="true") Profile
+                a#nav-profile-tab.nav-link(data-toggle="tab", href="#nav-profile", role="tab", aria-controls="nav-profile", aria-selected="true") Profile
               li.nav-item
-                a.nav-link(id="nav-contact-tab", data-toggle="tab", href="#nav-contact", role="tab", aria-controls="nav-contact", aria-selected="true") Contact
+                a#nav-contact-tab.nav-link(data-toggle="tab", href="#nav-contact", role="tab", aria-controls="nav-contact", aria-selected="true") Contact
           .card-body
             .tab-content
               #nav-home.tab-pane.fade.show.active(role="tabpanel", aria-labelledby="nav-home-tab")
