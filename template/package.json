@@ -19,7 +19,7 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.2",
     "@fortawesome/vue-fontawesome": "^0.0.22",
     "axios": "^0.16.2",
-    "bootstrap": "v4.0.0-beta.2",
+    "bootstrap": "^4.0.0",
     "jquery": "^3.2.1",
     "node-sass": "^4.5.3",
     "nuxt": "^1.0.0",
