@@ -13,9 +13,9 @@
           li.nav-item
             a.nav-link(href="#") Link
           li.nav-item.dropdown
-            a#navbarDropdown.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+            a#navbar-dropdown.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
               | Dropdown
-            .dropdown-menu(aria-labelledby="navbarDropdown")
+            .dropdown-menu(aria-labelledby="navbar-dropdown")
               a.dropdown-item(href="#") Action
               a.dropdown-item(href="#") Another action
               .dropdown-divider
