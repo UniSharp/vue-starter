@@ -1,17 +1,32 @@
 <template lang="pug">
   div
-    u-header.fixed-top
+    u-header.fixed-top(:class="`navbar-${isVeryTop ? 'dark' : 'light'}`")
     main
       nuxt
-    u-footer
+    u-footer(:class="{ 'show-gotop': !isVeryTop }")
 </template>
 
 <script>
+  import $ from 'jquery'
   import UHeader from '~/components/Header.vue'
   import UFooter from '~/components/Footer.vue'
 
   export default {
-    components: { UHeader, UFooter }
+    components: { UHeader, UFooter },
+    data () {
+      return {
+        isVeryTop: false
+      }
+    },
+    mounted () {
+      if (process.browser) {
+        this.$nextTick(() => {
+          $(window).scroll(() => {
+            this.isVeryTop = !($(window).scrollTop() > ($(window).height() - $('#navbar').height()) * 0.5)
+          }).scroll()
+        })
+      }
+    }
   }
 </script>
 
@@ -23,11 +38,9 @@
 </style>
 
 <style lang="scss" scoped>
-  $header-height: 3.5rem;
-  $footer-height: 4rem;
+  $footer-height: 6rem;
 
   main {
-    padding-top: $header-height;
     padding-bottom: $footer-height;
   }
 

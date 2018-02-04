@@ -14,6 +14,9 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: 'https://maps.googleapis.com/maps/api/js?callback=initMap' }
     ]
   },
   /*
@@ -30,7 +33,8 @@ module.exports = {
   ** Plugins
   */
   plugins: [
-    '~/plugins/FontAwesome'
+    '~/plugins/FontAwesome',
+    '~/plugins/Skrollr'
   ],
   /*
   ** Build configuration
@@ -39,7 +43,7 @@ module.exports = {
     /*
     ** Plugins
     */
-    vendor: ['jquery', 'popper.js', 'bootstrap'],
+    vendor: ['jquery', 'popper.js', 'bootstrap', 'skrollr'],
     plugins: [
       new webpack.ProvidePlugin({
         jQuery: 'jquery',

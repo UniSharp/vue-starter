@@ -1,0 +1,42 @@
+@mixin background($url: null, $size: cover, $position: center center, $repeat: no-repeat) {
+  @if $url {
+    background-image: url(#{$url});
+  }
+
+  background: {
+    size: $size;
+    repeat: $repeat;
+    position: $position;
+  }
+}
+
+@mixin background-mask($color: rgba($black, .3)) {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $color;
+  }
+}
+
+@mixin parallax-background($url) {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  .background {
+    @include background($url);
+
+    position: absolute;
+    top: -100px;
+    right: 0;
+    bottom: -100px;
+    left: 0;
+    z-index: -1;
+
+    @content;
+  }
+}
