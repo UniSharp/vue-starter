@@ -11,6 +11,10 @@
     },
     mounted () {
       this.$nextTick(() => {
+        if (typeof google === 'undefined') {
+          return
+        }
+
         let position = { lat: 25.0530338, lng: 121.5079483 }
 
         let styledMapType = new google.maps.StyledMapType([
@@ -121,7 +125,10 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~assets/scss/variables";
+
   #map {
+    background-color: $gray-200;
     height: 600px;
     width: 100%;
   }
