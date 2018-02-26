@@ -34,8 +34,19 @@ module.exports = {
   */
   plugins: [
     '~/plugins/FontAwesome',
-    '~/plugins/Skrollr'
+    '~/plugins/Skrollr',
+    '~/plugins/VueI18n'
   ],
+  /*
+  ** Router configuration
+  */
+  router: {
+    middleware: ['i18n'],
+  },
+  /*
+  ** SPA mode
+  */
+  mode: 'spa',
   /*
   ** Build configuration
   */
@@ -43,7 +54,7 @@ module.exports = {
     /*
     ** Plugins
     */
-    vendor: ['jquery', 'popper.js', 'bootstrap', 'skrollr'],
+    vendor: ['jquery', 'popper.js', 'bootstrap', 'skrollr', 'js-cookie', 'vue-i18n'],
     plugins: [
       new webpack.ProvidePlugin({
         jQuery: 'jquery',
