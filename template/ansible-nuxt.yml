@@ -1,0 +1,20 @@
+---
+- name: Deploy nuxt
+  hosts: "{{ git_branch }}"
+
+  vars_files:
+    - ansible/vars/global.yml
+
+  tasks:
+    - include_role:
+        name: common
+    - include_role:
+        name: deploy
+    - include_role:
+        name: update_nuxt
+    - include_role:
+        name: nginx
+      vars:
+        type: "frontend"
+    - include_role:
+        name: route53
