@@ -16,7 +16,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'https://maps.googleapis.com/maps/api/js?callback=initMap' }
+      { src: 'https://maps.googleapis.com/maps/api/js' }
     ]
   },
   /*
