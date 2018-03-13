@@ -15,7 +15,7 @@
     components: { UHeader, UFooter },
     data () {
       return {
-        isVeryTop: false
+        isVeryTop: true
       }
     },
     mounted () {
