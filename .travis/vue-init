@@ -1,0 +1,11 @@
+#!/usr/bin/env expect
+set timeout 360
+
+spawn vue init . demo
+
+# This happens because of
+# https://github.com/vuejs/vue-cli/issues/291
+expect "Project name" { send "\n" }
+expect "Project description" { send "\n" }
+expect "Author" { send "\n" }
+expect "vue-cli · Generated" { send "\n" }
