@@ -42,6 +42,7 @@ module.exports = {
   */
   router: {
     middleware: ['i18n'],
+    base: process.env.TRAVIS === true ? '/vue-starter/' : '/'
   },
   /*
   ** SPA mode
