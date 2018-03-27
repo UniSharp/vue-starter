@@ -23,6 +23,7 @@
     "bootstrap": "^4.0.0",
     "jquery": "^3.2.1",
     "js-cookie": "^2.2.0",
+    "mobile-detect": "^1.4.1",
     "node-sass": "^4.5.3",
     "nuxt": "^1.0.0",
     "popper.js": "^1.12.9",

@@ -1,6 +1,7 @@
 import Vue from 'vue'
+import MobileDetect from 'mobile-detect'
 
-if (process.browser) {
+if (process.browser && !new MobileDetect(window.navigator.userAgent).mobile()) {
   let skrollr
 
   Vue.mixin({
