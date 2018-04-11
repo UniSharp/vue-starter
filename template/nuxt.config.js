@@ -42,7 +42,42 @@ module.exports = {
   */
   router: {
     middleware: ['i18n'],
-    base: process.env.TRAVIS === 'true' ? '/vue-starter/' : '/'
+    base: process.env.TRAVIS === 'true' ? '/vue-starter/' : '/',
+    scrollBehavior (to, from, savedPosition) {
+      return new Promise(resolve => {
+        let scrollTo = (selector) => {
+          let scrollTop = 0
+
+          if (to.hash !== '#' && $(to.hash).length) {
+            scrollTop = $(to.hash).offset().top
+          }
+
+          $('html, body').stop(true, true).animate({ scrollTop })
+
+          return resolve(false)
+        }
+
+        if (savedPosition) {
+          return resolve(savedPosition)
+        }
+
+        if (from.path !== to.path && to.hash) {
+          return window.$nuxt.$once('pageMounted', () => {
+            return scrollTo(to.hash)
+          })
+        }
+
+        if (to.hash) {
+          return scrollTo(to.hash)
+        }
+
+        if (from.path === to.path && !from.hash) {
+          return resolve(false)
+        }
+
+        return resolve({ x: 0, y: 0 })
+      })
+    }
   },
   /*
   ** SPA mode

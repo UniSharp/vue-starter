@@ -11,9 +11,9 @@
               | Home
               span.sr-only (current)
           li.nav-item
-            nuxt-link.nav-link(to="#", @click.native="hideCollapse") Link
+            nuxt-link.nav-link(to="#features", @click.native="hideCollapse") Features
           li.nav-item
-            nuxt-link.nav-link.disabled(to="#") Disabled
+            nuxt-link.nav-link(to="#map", @click.native="hideCollapse") Map
           li.nav-item.dropdown
             a#navbar-dropdown.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false", v-text="locales[locale]")
               //- fa.ml-2(:icon="['fal', 'angle-down']", size="lg")
