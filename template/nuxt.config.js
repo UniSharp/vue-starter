@@ -35,6 +35,7 @@ module.exports = {
   plugins: [
     '~/plugins/FontAwesome',
     '~/plugins/Skrollr',
+    '~/plugins/Aos',
     '~/plugins/VueI18n'
   ],
   /*
@@ -90,7 +91,15 @@ module.exports = {
     /*
     ** Plugins
     */
-    vendor: ['jquery', 'popper.js', 'bootstrap', 'skrollr', 'js-cookie', 'vue-i18n'],
+    vendor: [
+      'jquery',
+      'popper.js',
+      'bootstrap',
+      'skrollr',
+      'aos',
+      'js-cookie',
+      'vue-i18n'
+    ],
     plugins: [
       new webpack.ProvidePlugin({
         jQuery: 'jquery',

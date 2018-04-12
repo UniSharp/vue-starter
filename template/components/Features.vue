@@ -5,9 +5,9 @@
       data-bottom-top="background-position: 50% 100px;",
       data-anchor-target="#features")
     .container.text-white.text-center
-      h2.text-uppercase Features
+      h2.text-uppercase(data-aos="fade-up") Features
       .row
-        .col-sm-6.col-md-4(:key="i", v-for="(feature, i) in features")
+        .col-sm-6.col-md-4(data-aos="flip-left", :key="i", v-for="(feature, i) in features")
           fa.mb-3(:icon="feature.icon", size="5x")
           p.mb-0(v-text="feature.text")
 </template>
