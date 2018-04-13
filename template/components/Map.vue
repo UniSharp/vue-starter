@@ -108,7 +108,8 @@
 
         let map = new google.maps.Map(this.$refs.map, {
           zoom: 16,
-          center: position
+          center: position,
+          disableDefaultUI: true
         })
 
         map.mapTypes.set('styled-map', styledMapType)
