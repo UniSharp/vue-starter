@@ -8,8 +8,8 @@
 
 <script>
   import $ from 'jquery'
-  import UHeader from '~/components/Header.vue'
-  import UFooter from '~/components/Footer.vue'
+  import UHeader from '~/components/Header'
+  import UFooter from '~/components/Footer'
 
   export default {
     components: { UHeader, UFooter },

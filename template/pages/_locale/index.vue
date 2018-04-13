@@ -6,9 +6,9 @@
 </template>
 
 <script>
-  import UBanner from '~/components/Banner.vue'
-  import UFeatures from '~/components/Features.vue'
-  import UMap from '~/components/Map.vue'
+  import UMap from '~/components/Map'
+  import UBanner from '~/components/Banner'
+  import UFeatures from '~/components/Features'
 
   export default {
     components: { UBanner, UFeatures, UMap }
