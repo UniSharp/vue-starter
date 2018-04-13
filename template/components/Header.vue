@@ -1,7 +1,11 @@
 <template lang="pug">
   header.text-uppercase
     nav#navbar.navbar.navbar-expand-md
-      nuxt-link.navbar-brand(to="#") Navbar
+      nuxt-link.navbar-brand(to="#")
+        .logo
+          img.white(src="~/assets/images/logo-white.svg")
+          img.black(src="~/assets/images/logo-black.svg")
+        span UniSharp
       button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbar-content", aria-controls="navbar-content", aria-expanded="false", aria-label="Toggle navigation")
         span.navbar-toggler-icon
       #navbar-content.collapse.navbar-collapse
@@ -58,6 +62,30 @@
 
       .navbar-brand {
         font-size: 1.75rem;
+        display: flex;
+        align-items: center;
+
+        .logo {
+          margin-top: -.25rem;
+          margin-left: .25rem;
+          margin-right: .5rem;
+          position: relative;
+          width: 3.75rem;
+
+          &, img {
+            height: 2.25rem;
+          }
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            &.black {
+              opacity: 0;
+            }
+          }
+        }
       }
 
       .navbar-toggler {
@@ -88,6 +116,24 @@
 
       .navbar-brand {
         font-size: 1.5rem;
+
+        .logo {
+          width: 3rem;
+
+          &, img {
+            height: 1.75rem;
+          }
+
+          img {
+            &.white {
+              opacity: 0;
+            }
+
+            &.black {
+              opacity: 1;
+            }
+          }
+        }
       }
     }
 
