@@ -6,7 +6,7 @@
           img.white(src="~/assets/images/logo-white.svg")
           img.black(src="~/assets/images/logo-black.svg")
         span UniSharp
-      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbar-content", aria-controls="navbar-content", aria-expanded="false", aria-label="Toggle navigation")
+      button.navbar-toggler.collapsed(type="button", data-toggle="collapse", data-target="#navbar-content", aria-controls="navbar-content", aria-expanded="false", aria-label="Toggle navigation")
         span.navbar-toggler-icon
       #navbar-content.collapse.navbar-collapse
         ul.navbar-nav.ml-auto
@@ -49,6 +49,56 @@
   @import "~assets/scss/helpers";
   @import "~assets/scss/variables";
 
+  @mixin navbar-collapse-style {
+    &.navbar {
+      .nav-link, .dropdown-item {
+        padding: 1rem .5rem;
+      }
+
+      .dropdown-menu {
+        border: none;
+        margin: 0;
+        padding: 0 1rem;
+      }
+    }
+
+    header:not(.navbar-light) & {
+      .navbar-collapse {
+        @include border-radius;
+
+        margin-top: 1rem;
+        padding: .75rem 1.5rem;
+        background-color: rgba($white, 1);
+
+        .nav-link {
+          color: $navbar-light-color;
+
+          @include hover-focus {
+            color: $navbar-light-hover-color;
+          }
+
+          &.disabled {
+            color: $navbar-light-disabled-color;
+          }
+        }
+
+        .show > .nav-link, .active > .nav-link, .nav-link.show, .nav-link.active {
+          color: $navbar-light-active-color;
+        }
+      }
+    }
+
+    header.navbar-light & {
+      .navbar-collapse {
+        margin-top: .5rem;
+      }
+
+      .nav-item {
+        border-top: 1px solid $gray-200;
+      }
+    }
+  }
+
   header {
     padding: 1rem;
     background-color: rgba($white, 0);
@@ -89,14 +139,78 @@
       }
 
       .navbar-toggler {
+        width: 1.75em;
+        height: 1.75em;
         padding-left: 0;
         padding-right: 0;
         border: none;
         outline: none !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         .navbar-toggler-icon {
-          width: 1.75em;
-          height: 1.75em;
+          position: relative;
+          background-image: none;
+
+          &, &:before, &:after {
+            @include transition;
+            @include border-radius(.25em);
+
+            flex: 0 0 auto;
+            width: 1.75em;
+            height: .2em;
+            background-color: $navbar-dark-color;
+          }
+
+          &:before, &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+          }
+
+          &:before {
+            top: -.45em;
+          }
+
+          &:after {
+            bottom: -.45em;
+          }
+        }
+
+        &:hover .navbar-toggler-icon {
+          &:before {
+            top: -.55em;
+          }
+
+          &:after {
+            bottom: -.55em;
+          }
+        }
+
+        &:not(.collapsed) {
+          .navbar-toggler-icon {
+            width: 0;
+            background-color: rgba($navbar-dark-color, 0);
+
+            &:before, &:after {
+              left: -.875em !important;
+            }
+
+            &:before {
+              top: 0 !important;
+              transform: rotate(45deg);
+            }
+
+            &:after {
+              bottom: 0 !important;
+              transform: rotate(-45deg);
+            }
+          }
+
+          &:not(:hover) .navbar-toggler-icon {
+            transform: scale(.9);
+          }
         }
       }
 
@@ -135,54 +249,39 @@
           }
         }
       }
+
+      .navbar-toggler {
+        .navbar-toggler-icon {
+          &, &:before, &:after {
+            background-color: $navbar-light-color;
+          }
+        }
+
+        &:not(.collapsed) .navbar-toggler-icon {
+          background-color: rgba($navbar-light-color, 0);
+        }
+      }
     }
+  }
 
-    @include media-breakpoint-down(sm) {
-      .navbar {
-        .nav-link, .dropdown-item {
-          padding: 1rem .5rem;
+  .navbar-expand-never {
+    @include navbar-collapse-style;
+  }
+
+  .navbar-expand {
+    @each $breakpoint in map-keys($grid-breakpoints) {
+      $next: breakpoint-next($breakpoint, $grid-breakpoints);
+      $infix: breakpoint-infix($next, $grid-breakpoints);
+
+      &#{$infix} {
+        @include media-breakpoint-down($breakpoint) {
+          @include navbar-collapse-style;
         }
 
-        .dropdown-menu {
-          border: none;
-          margin: 0;
-          padding: 0 1rem;
-        }
-      }
-
-      &:not(.navbar-light) {
-        .navbar-collapse {
-          @include border-radius;
-
-          margin-top: 1rem;
-          padding: .75rem 1.5rem;
-          background-color: rgba($white, 1);
-
-          .nav-link {
-            color: $navbar-light-color;
-
-            @include hover-focus {
-              color: $navbar-light-hover-color;
-            }
-
-            &.disabled {
-              color: $navbar-light-disabled-color;
-            }
+        @include media-breakpoint-up($next) {
+          .navbar-toggler {
+            display: none !important;
           }
-
-          .show > .nav-link, .active > .nav-link, .nav-link.show, .nav-link.active {
-            color: $navbar-light-active-color;
-          }
-        }
-      }
-
-      &.navbar-light {
-        .navbar-collapse {
-          margin-top: .5rem;
-        }
-
-        .nav-item {
-          border-top: 1px solid $gray-200;
         }
       }
     }
