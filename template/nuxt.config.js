@@ -8,6 +8,9 @@ const polyfills = [
   'Array.prototype.findIndex',
   'Array.prototype.includes',
   'String.prototype.includes',
+  'String.prototype.padStart',
+  'String.prototype.padEnd',
+  'String.prototype.repeat',
   'String.prototype.startsWith',
   'String.prototype.endsWith'
 ]
