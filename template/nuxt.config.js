@@ -51,7 +51,8 @@ module.exports = {
     '~/plugins/FontAwesome',
     '~/plugins/Skrollr',
     '~/plugins/Aos',
-    '~/plugins/VueI18n'
+    '~/plugins/VueI18n',
+    '~/plugins/Helpers'
   ],
   /*
   ** Router configuration
@@ -113,7 +114,8 @@ module.exports = {
       'skrollr',
       'aos',
       'js-cookie',
-      'vue-i18n'
+      'vue-i18n',
+      '@unisharp/helpers.js'
     ],
     plugins: [
       new webpack.ProvidePlugin({
