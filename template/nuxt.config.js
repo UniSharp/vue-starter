@@ -111,6 +111,7 @@ module.exports = {
       'jquery',
       'popper.js',
       'bootstrap',
+      'mobile-detect',
       'skrollr',
       'aos',
       'js-cookie',
