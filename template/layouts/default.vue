@@ -13,6 +13,16 @@
 
   export default {
     components: { UHeader, UFooter },
+    head () {
+      return {
+        meta: [
+          { hid: 'og:url', name: 'og:url', content: location.href }
+        ],
+        link: [
+          { hid: 'canonical', rel: 'canonical', href: location.href }
+        ]
+      }
+    },
     data () {
       return {
         isVeryTop: true
