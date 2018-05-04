@@ -111,6 +111,14 @@ module.exports = {
   */
   build: {
     /*
+    ** Babel configuration
+    */
+    babel: {
+      plugins: [
+        '@unisharp/helpers.js/plugin/lib'
+      ]
+    },
+    /*
     ** Plugins
     */
     vendor: [
