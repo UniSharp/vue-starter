@@ -1,7 +1,7 @@
 <template lang="pug">
   header.text-uppercase
     nav#navbar.navbar.navbar-expand-md
-      nuxt-link.navbar-brand(to="#")
+      nuxt-link.navbar-brand(to="/#")
         .logo
           img.white(src="~/assets/images/logo-white.svg")
           img.black(src="~/assets/images/logo-black.svg")
@@ -11,13 +11,27 @@
       #navbar-content.collapse.navbar-collapse
         ul.navbar-nav.ml-auto
           li.nav-item.active
-            nuxt-link.nav-link(to="#", @click.native="hideCollapse")
+            nuxt-link.nav-link(to="/#", @click.native="hideCollapse")
               | Home
               span.sr-only (current)
           li.nav-item
-            nuxt-link.nav-link(to="#features", @click.native="hideCollapse") Features
+            nuxt-link.nav-link(to="/#features", @click.native="hideCollapse") Features
           li.nav-item
-            nuxt-link.nav-link(to="#map", @click.native="hideCollapse") Map
+            nuxt-link.nav-link(to="/#map", @click.native="hideCollapse") Map
+          {{# auth }}
+          li.nav-item(v-if="auth.check")
+            {{# i18n }}
+            nuxt-link.nav-link(:to="$i18n.path('/auth/logout')", @click.native="hideCollapse") Logout
+            {{ else }}
+            nuxt-link.nav-link(to="/auth/logout", @click.native="hideCollapse") Logout
+            {{/ i18n }}
+          li.nav-item(v-else)
+            {{# i18n }}
+            nuxt-link.nav-link(:to="$i18n.path('/auth/login')", @click.native="hideCollapse") Login
+            {{ else }}
+            nuxt-link.nav-link(to="/auth/login", @click.native="hideCollapse") Login
+            {{/ i18n }}
+          {{/ auth }}
           {{# i18n }}
           li.nav-item.dropdown
             a#navbar-dropdown.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false", v-text="locales[locale]")
@@ -30,9 +44,15 @@
 
 <script>
   import $ from 'jquery'
+  {{# auth }}
+  import auth from '~/mixins/auth'
+  {{/ auth }}
   import { mapGetters } from 'vuex'
 
   export default {
+    {{# auth }}
+    mixins: [auth],
+    {{/ auth }}
     computed: {
       ...mapGetters(['locale', 'locales'])
     },

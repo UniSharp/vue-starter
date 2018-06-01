@@ -32,7 +32,7 @@
       if (process.browser) {
         this.$nextTick(() => {
           $(window).scroll(() => {
-            this.isVeryTop = !($(window).scrollTop() > ($(window).height() - $('#navbar').height()) * 0.5)
+            this.isVeryTop = !($(window).scrollTop() > ($(window).height() - $('#navbar').height()) * 0.3)
           }).scroll()
         })
       }

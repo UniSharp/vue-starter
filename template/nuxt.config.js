@@ -60,16 +60,36 @@ module.exports = {
     {{# i18n }}
     '~/plugins/VueI18n',
     {{/ i18n }}
+    {{# auth }}
+    '~/plugins/Axios',
+    {{/ auth }}
     '~/plugins/Helpers'
   ],
+  {{# auth }}
+  /*
+  ** Modules
+  */
+  modules: [
+    '@nuxtjs/axios'
+  ],
+  /*
+  ** Axios configuration
+  */
+  axios: {
+    baseURL: process.env.API_BASE || '/api/v1'
+  },
+  {{/ auth }}
   /*
   ** Router configuration
   */
   router: {
     middleware: [
       {{# i18n }}
-      'i18n'
+      'i18n'{{# auth }},{{/ auth }}
       {{/ i18n }}
+      {{# auth }}
+      'check-auth'
+      {{/ auth }}
     ],
     {{# travis }}
     base: '/vue-starter/',
@@ -136,10 +156,13 @@ module.exports = {
       'mobile-detect',
       'skrollr',
       'aos',
-      'js-cookie',
       {{# i18n }}
       'vue-i18n',
       {{/ i18n }}
+      {{# auth }}
+      'js-cookie',
+      'axios',
+      {{/ auth }}
       '@unisharp/helpers.js'
     ],
     plugins: [

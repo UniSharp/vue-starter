@@ -1,17 +1,17 @@
 <template lang="pug">
   .index
-    u-banner
+    u-cover
     u-features
     u-map
 </template>
 
 <script>
   import UMap from '~/components/Map'
-  import UBanner from '~/components/Banner'
+  import UCover from '~/components/Cover'
   import UFeatures from '~/components/Features'
 
   export default {
-    components: { UBanner, UFeatures, UMap }
+    components: { UCover, UFeatures, UMap }
   }
 </script>
 
