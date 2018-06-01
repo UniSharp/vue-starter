@@ -1,3 +1,4 @@
+{{# i18n }}
 export const state = () => ({
   locale: 'en',
   locales: {
@@ -19,3 +20,4 @@ export const mutations = {
     }
   }
 }
+{{/ i18n }}

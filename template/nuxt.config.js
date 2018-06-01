@@ -57,14 +57,20 @@ module.exports = {
     '~/plugins/FontAwesome',
     '~/plugins/Skrollr',
     '~/plugins/Aos',
+    {{# i18n }}
     '~/plugins/VueI18n',
+    {{/ i18n }}
     '~/plugins/Helpers'
   ],
   /*
   ** Router configuration
   */
   router: {
-    middleware: ['i18n'],
+    middleware: [
+      {{# i18n }}
+      'i18n'
+      {{/ i18n }}
+    ],
     base: process.env.TRAVIS === 'true' ? '/vue-starter/' : '/',
     scrollBehavior (to, from, savedPosition) {
       return new Promise(resolve => {
@@ -129,7 +135,9 @@ module.exports = {
       'skrollr',
       'aos',
       'js-cookie',
+      {{# i18n }}
       'vue-i18n',
+      {{/ i18n }}
       '@unisharp/helpers.js'
     ],
     plugins: [
