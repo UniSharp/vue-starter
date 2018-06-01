@@ -27,6 +27,11 @@ module.exports = {
     ansible: {
       'type': 'confirm',
       'message': 'With ansible?'
+    },
+    travis: {
+      'when': "process.env.TRAVIS === 'true'",
+      'type': 'confirm',
+      'message': 'With travis?'
     }
   },
   filters: {

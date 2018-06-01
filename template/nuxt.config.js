@@ -71,7 +71,9 @@ module.exports = {
       'i18n'
       {{/ i18n }}
     ],
-    base: process.env.TRAVIS === 'true' ? '/vue-starter/' : '/',
+    {{# travis }}
+    base: '/vue-starter/',
+    {{/ travis }}
     scrollBehavior (to, from, savedPosition) {
       return new Promise(resolve => {
         let scrollTo = (selector) => {

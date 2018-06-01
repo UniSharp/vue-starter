@@ -8,4 +8,7 @@ spawn vue init . demo
 expect "Project name" { send "\n" }
 expect "Project description" { send "\n" }
 expect "Author" { send "\n" }
+expect "Use i18n?" { send "n\n" }
+expect "With ansible?" { send "n\n" }
+expect "With travis?" { send "\n" }
 expect "vue-cli · Generated" { send "\n" }
