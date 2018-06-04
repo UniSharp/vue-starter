@@ -25,11 +25,17 @@
             {{ else }}
             nuxt-link.nav-link(to="/auth/logout", @click.native="hideCollapse") Logout
             {{/ i18n }}
-          li.nav-item(v-else)
+          template(v-else)
             {{# i18n }}
-            nuxt-link.nav-link(:to="$i18n.path('/auth/login')", @click.native="hideCollapse") Login
+            li.nav-item
+              nuxt-link.nav-link(:to="$i18n.path('/auth/register')", @click.native="hideCollapse") Register
+            li.nav-item
+              nuxt-link.nav-link(:to="$i18n.path('/auth/login')", @click.native="hideCollapse") Login
             {{ else }}
-            nuxt-link.nav-link(to="/auth/login", @click.native="hideCollapse") Login
+            li.nav-item
+              nuxt-link.nav-link(to="/auth/register", @click.native="hideCollapse") Register
+            li.nav-item
+              nuxt-link.nav-link(to="/auth/login", @click.native="hideCollapse") Login
             {{/ i18n }}
           {{/ auth }}
           {{# i18n }}
