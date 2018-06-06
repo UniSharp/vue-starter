@@ -57,6 +57,7 @@ module.exports = {
     '~/plugins/FontAwesome',
     '~/plugins/Skrollr',
     '~/plugins/Aos',
+    '~/plugins/PageMounted',
     {{# i18n }}
     '~/plugins/VueI18n',
     {{/ i18n }}
