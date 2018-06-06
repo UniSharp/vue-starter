@@ -11,13 +11,25 @@
       #navbar-content.collapse.navbar-collapse
         ul.navbar-nav.ml-auto
           li.nav-item.active
+            {{# i18n }}
+            nuxt-link.nav-link(:to="$i18n.path('/#')", @click.native="hideCollapse")
+            {{ else }}
             nuxt-link.nav-link(to="/#", @click.native="hideCollapse")
+            {{/ i18n }}
               | Home
               span.sr-only (current)
           li.nav-item
+            {{# i18n }}
+            nuxt-link.nav-link(:to="$i18n.path('/#features')", @click.native="hideCollapse") Features
+            {{ else }}
             nuxt-link.nav-link(to="/#features", @click.native="hideCollapse") Features
+            {{/ i18n }}
           li.nav-item
+            {{# i18n }}
+            nuxt-link.nav-link(:to="$i18n.path('/#map')", @click.native="hideCollapse") Map
+            {{ else }}
             nuxt-link.nav-link(to="/#map", @click.native="hideCollapse") Map
+            {{/ i18n }}
           {{# auth }}
           li.nav-item(v-if="auth.check")
             {{# i18n }}
