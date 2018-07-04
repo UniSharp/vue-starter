@@ -16,7 +16,7 @@
           label(for="name") Name
           input#name.form-control
         .form-group
-          label(for="email") Email
+          label(for="email") E-mail
           input#email.form-control(type="email")
         .pb-2
         button.btn.btn-primary.d-block.ml-auto.text-uppercase(type="submit") Register
