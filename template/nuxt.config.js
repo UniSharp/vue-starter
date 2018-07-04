@@ -24,7 +24,6 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '{{ escape description }}' },
       { hid: 'author', name: 'author', content: '{{ name }}' },
       { hid: 'description', name: 'description', content: '{{ escape description }}' },
       { hid: 'og:title', property: 'og:title', content: '{{ name }}' },
