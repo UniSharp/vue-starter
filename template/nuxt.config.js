@@ -28,8 +28,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: '{{ escape description }}' },
       { hid: 'og:title', property: 'og:title', content: '{{ name }}' },
       { hid: 'og:description', property: 'og:description', content: '{{ escape description }}' },
-      { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:site_name', property: 'og:site_name', content: '{{ name }}' }
+      { hid: 'og:site_name', property: 'og:site_name', content: '{{ name }}' },
+      { hid: 'og:type', property: 'og:type', content: 'website' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
