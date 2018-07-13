@@ -2,7 +2,5 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/animate.css/animate.css";
 @import "sizing";
-
-* {
-  letter-spacing: .1rem;
-}
+@import "forms";
+@import "global";

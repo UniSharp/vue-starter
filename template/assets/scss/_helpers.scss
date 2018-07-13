@@ -22,6 +22,22 @@
   }
 }
 
+@mixin background-with-mask($url) {
+  position: relative;
+
+  .background {
+    @include background($url);
+    @include background-mask;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
 @mixin parallax-background($url) {
   position: relative;
   width: 100%;

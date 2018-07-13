@@ -3,30 +3,20 @@
     u-banner Register
     .container.py-5
       form
-        .form-group
-          label(for="username") Username
-          input#username.form-control
-        .form-group
-          label(for="password") Password
-          input#password.form-control(type="password")
-        .form-group
-          label(for="password_confirmation") Password Confirmation
-          input#password_confirmation.form-control(type="password")
-        .form-group
-          label(for="name") Name
-          input#name.form-control
-        .form-group
-          label(for="email") E-mail
-          input#email.form-control(type="email")
+        form-input(label="Name")
+        form-input(label="E-mail", type="email")
+        form-input(label="Password", type="password")
+        form-input(label="Password Confirmation", type="password")
         .pb-2
         button.btn.btn-primary.d-block.ml-auto.text-uppercase(type="submit") Register
 </template>
 
 <script>
   import UBanner from '~/components/Banner'
+  import FormInput from '~/components/Form/Input'
 
   export default {
-    components: { UBanner },
+    components: { UBanner, FormInput },
     middleware: ['guest']
   }
 </script>

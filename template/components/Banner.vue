@@ -16,23 +16,12 @@
   @import "~assets/scss/variables";
 
   .banner {
-    position: relative;
+    @include background-with-mask("https://picsum.photos/1920/1080");
+
     height: 35vh;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    .background {
-      @include background("https://picsum.photos/1920/1080");
-      @include background-mask;
-
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-    }
 
     h2 {
       color: $white;

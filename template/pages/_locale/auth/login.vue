@@ -3,21 +3,20 @@
     u-banner Login
     .container.py-5
       form
-        .form-group
-          label(for="username") Username
-          input#username.form-control
-        .form-group
-          label(for="password") Password
-          input#password.form-control(type="password")
+        form-input(label="E-mail", type="email")
+        form-input(label="Password", type="password")
         .pb-2
-        button.btn.btn-primary.d-block.ml-auto.text-uppercase(type="submit") Login
+        .d-flex.align-items-center
+          nuxt-link.text-muted.text-uppercase(:to="$i18n.path('/auth/register')") Register
+          button.btn.btn-primary.d-block.ml-auto.text-uppercase(type="submit") Login
 </template>
 
 <script>
   import UBanner from '~/components/Banner'
+  import FormInput from '~/components/Form/Input'
 
   export default {
-    components: { UBanner },
+    components: { UBanner, FormInput },
     middleware: ['guest']
   }
 </script>
