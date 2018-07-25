@@ -52,7 +52,8 @@
           {{/ auth }}
           {{# i18n }}
           li.nav-item.dropdown
-            a#navbar-dropdown.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false", v-text="locales[locale]")
+            a#navbar-dropdown.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+              span(v-text="locales[locale]")
               {{# unless travis }}
               fa.ml-2(:icon="['fal', 'angle-down']", size="lg")
               {{/ unless }}
