@@ -10,8 +10,11 @@
       a(href="https://www.facebook.com/UniSharpTech", target="_blank")
         fa(:icon="['fab', 'facebook-square']")
     a.gotop.bg-white.text-dark(href="#", @click.prevent="scroll")
-      //- fa(:icon="['fas', 'arrow-alt-up']")
+      {{# travis }}
       fa(:icon="['fas', 'arrow-up']")
+      {{ else }}
+      fa(:icon="['fal', 'arrow-up']")
+      {{/ travis }}
 </template>
 
 <script>

@@ -7,8 +7,11 @@
         | Perfect Quality
       p.mb-5 We Build Great Digital Products.
       p.mb-0
-        //- fa(:icon="['fal', 'arrow-circle-down']", size="3x", @click="scroll")
+        {{# travis }}
         fa.animated.pulse.infinite(:icon="['far', 'arrow-alt-circle-down']", size="3x", @click="scroll")
+        {{ else }}
+        fa.animated.pulse.infinite(:icon="['fal', 'arrow-circle-down']", size="3x", @click="scroll")
+        {{/ travis }}
     .carousel.slide(data-ride="carousel")
       .carousel-inner
         .carousel-item(:class="{ active: i === 0 }", :key="i", v-for="(image, i) in images")

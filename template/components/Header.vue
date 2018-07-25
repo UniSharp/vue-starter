@@ -53,8 +53,9 @@
           {{# i18n }}
           li.nav-item.dropdown
             a#navbar-dropdown.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false", v-text="locales[locale]")
-              //- fa.ml-2(:icon="['fal', 'angle-down']", size="lg")
-              //- fa.ml-2(:icon="['fas', 'angle-down']", size="lg")
+              {{# unless travis }}
+              fa.ml-2(:icon="['fal', 'angle-down']", size="lg")
+              {{/ unless }}
             .dropdown-menu.dropdown-menu-right(aria-labelledby="navbar-dropdown")
               a.dropdown-item(href="#", @click.prevent="changeLocale(locale)", :key="locale", v-for="(text, locale) in locales", v-text="text")
           {{/ i18n }}
@@ -260,9 +261,11 @@
         min-width: auto;
       }
 
-      // .dropdown-toggle:after {
-      //   display: none;
-      // }
+      {{# unless travis }}
+      .dropdown-toggle:after {
+        display: none;
+      }
+      {{/ unless }}
     }
 
     &.navbar-light {

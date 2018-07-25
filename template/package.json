@@ -13,16 +13,27 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome": "^1.1.1",
-    "@fortawesome/fontawesome-free-brands": "^5.0.2",
-    "@fortawesome/fontawesome-free-regular": "^5.0.2",
-    "@fortawesome/fontawesome-free-solid": "^5.0.2",
-    "@fortawesome/vue-fontawesome": "^0.0.22",
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@fortawesome/free-brands-svg-icons": "^5.2.0",
+    {{# travis }}
+    "@fortawesome/free-light-svg-icons": "^5.2.0",
+    "@fortawesome/free-regular-svg-icons": "^5.2.0",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    {{ else }}
+    "@fortawesome/pro-light-svg-icons": "^5.2.0",
+    "@fortawesome/pro-regular-svg-icons": "^5.2.0",
+    "@fortawesome/pro-solid-svg-icons": "^5.2.0",
+    {{/ travis }}
+    "@fortawesome/vue-fontawesome": "^0.1.1",
+    {{# auth }}
     "@nuxtjs/axios": "^5.1.1",
+    {{/ auth }}
     "@unisharp/helpers.js": "*",
     "animate.css": "^3.6.1",
     "aos": "^2.2.0",
+    {{# auth }}
     "axios": "^0.16.2",
+    {{/ auth }}
     "bootstrap": "^4.0.0",
     "jquery": "^3.2.1",
     "js-cookie": "^2.2.0",
@@ -33,7 +44,9 @@
     "pug": "^2.0.0-rc.3",
     "sass-loader": "^6.0.6",
     "skrollr": "^0.6.26",
+    {{# i18n }}
     "vue-i18n": "^7.4.2",
+    {{/ i18n }}
     "vuejs-datepicker": "^1.5.2"
   },
   "devDependencies": {

@@ -1,14 +1,12 @@
 import Vue from 'vue'
-import FontAwesome from '@fortawesome/fontawesome'
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fal } from '@fortawesome/pro-light-svg-icons'
+import { fas } from '@fortawesome/pro-solid-svg-icons'
+import { far } from '@fortawesome/pro-regular-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-import solid from '@fortawesome/fontawesome-free-solid'
-import brands from '@fortawesome/fontawesome-free-brands'
-import regular from '@fortawesome/fontawesome-free-regular'
-
-FontAwesome.library.add(solid)
-FontAwesome.library.add(brands)
-FontAwesome.library.add(regular)
+library.add(fab, fal, fas, far)
 
 Vue.mixin({
   components: { fa: FontAwesomeIcon }
