@@ -1,0 +1,23 @@
+.vdp-datepicker__calendar {
+  @include border-radius;
+  @include box-shadow($dropdown-box-shadow);
+
+  header {
+    .prev, .next, .up {
+      &:not(.disabled):hover {
+        @include border-radius;
+      }
+    }
+  }
+
+  .cell:not(.blank):not(.disabled) {
+    &.day, &.month, &.year {
+      &.selected, &:hover {
+        @include border-radius;
+
+        border-color: transparent !important;
+        background-color: #eee !important;
+      }
+    }
+  }
+}
