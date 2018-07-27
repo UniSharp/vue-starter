@@ -35,7 +35,9 @@
     {{/ auth }}
     "bootstrap": "^4.0.0",
     "jquery": "^3.2.1",
+    {{# auth }}
     "js-cookie": "^2.2.0",
+    {{/ auth }}
     "mobile-detect": "^1.4.1",
     "node-sass": "^4.5.3",
     "nuxt": "^1.0.0",
@@ -43,6 +45,7 @@
     "pug": "^2.0.0-rc.3",
     "sass-loader": "^6.0.6",
     "skrollr": "^0.6.26",
+    "sprintf-js": "^1.1.1",
     {{# i18n }}
     "vue-i18n": "^7.4.2",
     {{/ i18n }}
