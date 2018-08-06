@@ -143,7 +143,7 @@ module.exports = {
     */
     babel: {
       plugins: [
-        '@unisharp/helpers.js/plugin/lib'
+        '@unisharp/babel-plugin'
       ]
     },
     /*
