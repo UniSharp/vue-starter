@@ -65,7 +65,6 @@ module.exports = {
     {{/ auth }}
     '~/plugins/Helpers'
   ],
-  {{# auth }}
   /*
   ** Modules
   */
@@ -78,7 +77,6 @@ module.exports = {
   axios: {
     baseURL: process.env.API_BASE || '/api/v1'
   },
-  {{/ auth }}
   /*
   ** Router configuration
   */

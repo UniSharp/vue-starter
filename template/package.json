@@ -24,9 +24,7 @@
     "@fortawesome/pro-solid-svg-icons": "^5.2.0",
     {{/ travis }}
     "@fortawesome/vue-fontawesome": "^0.1.1",
-    {{# auth }}
     "@nuxtjs/axios": "^5.1.1",
-    {{/ auth }}
     "@unisharp/helpers.js": "*",
     "animate.css": "^3.6.1",
     "aos": "^2.2.0",
