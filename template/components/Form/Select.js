@@ -5,7 +5,7 @@ export default {
   render () {
     let options = this.normalizedItems.map(item => this.$createElement('option', {
       domProps: { value: item.value }
-    }, item.text))
+    }, item.label))
 
     if (this.placeholder) {
       options.unshift(this.$createElement('option', {

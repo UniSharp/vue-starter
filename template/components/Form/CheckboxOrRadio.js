@@ -29,7 +29,7 @@ export default {
         this.$createElement('label', {
           staticClass: 'custom-control-label',
           attrs: { for: id }
-        }, item.text)
+        }, item.label)
       ])
     })))
   }

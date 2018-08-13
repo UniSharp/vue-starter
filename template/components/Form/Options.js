@@ -11,7 +11,7 @@ export default {
   computed: {
     normalizedItems () {
       if (Object.isObject(this.items)) {
-        return this.items.reduce((items, text, value) => [...items, { text, value }], [])
+        return this.items.reduce((items, label, value) => [...items, { label, value }], [])
       }
 
       if (Array.isArray(this.items)) {
@@ -20,7 +20,7 @@ export default {
             return item
           }
 
-          return { text: item, value: item }
+          return { label: item, value: item }
         })
       }
 
