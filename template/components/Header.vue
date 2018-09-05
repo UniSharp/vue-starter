@@ -67,7 +67,9 @@
   {{# auth }}
   import auth from '~/mixins/auth'
   {{/ auth }}
+  {{# i18n }}
   import { mapGetters } from 'vuex'
+  {{/ i18n }}
 
   export default {
     {{# auth }}
