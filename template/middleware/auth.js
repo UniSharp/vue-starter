@@ -1,5 +1,9 @@
 export default ({ app, store, redirect, params }) => {
   if (!store.state.auth.check) {
-    redirect(`/${params.locale}/login`)
+    {{# i18n }}
+    redirect(`/${params.locale}/auth/login`)
+    {{ else }}
+    redirect('/auth/login')
+    {{/ i18n }}
   }
 }

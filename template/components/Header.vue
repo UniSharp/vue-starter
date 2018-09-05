@@ -73,9 +73,11 @@
     {{# auth }}
     mixins: [auth],
     {{/ auth }}
+    {{# i18n }}
     computed: {
       ...mapGetters(['locale', 'locales'])
     },
+    {{/ i18n }}
     methods: {
       hideCollapse () {
         $('#navbar-content').collapse('hide')
