@@ -6,7 +6,14 @@ export default {
     items: {
       type: Array,
       required: true
+    },
+    value: {
+      //
     }
+  },
+  model: {
+    prop: 'value',
+    event: 'change'
   },
   computed: {
     normalizedItems () {
@@ -25,6 +32,11 @@ export default {
       }
 
       return []
+    }
+  },
+  methods: {
+    handleChange (e) {
+      return this.$emit('change', e.target.value)
     }
   }
 }

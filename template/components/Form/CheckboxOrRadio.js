@@ -24,7 +24,8 @@ export default {
           staticClass: 'custom-control-input',
           class: this.buildInputClasses(),
           attrs: this.buildInputAttrs({ type: this.type }),
-          domProps: this.buildInputDomProps({ id, value: item.value })
+          domProps: this.buildInputDomProps({ id, value: item.value, checked: this.isChecked(item.value) }),
+          on: { change: this.handleChange }
         }),
         this.$createElement('label', {
           staticClass: 'custom-control-label',

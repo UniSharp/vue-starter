@@ -6,5 +6,10 @@ export default {
     return {
       type: 'radio'
     }
+  },
+  methods: {
+    isChecked (value) {
+      return value === this.value
+    }
   }
 }
