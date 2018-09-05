@@ -2,6 +2,11 @@ import CheckboxOrRadio from './CheckboxOrRadio'
 
 export default {
   mixins: [CheckboxOrRadio],
+  props: {
+    value: {
+      default: () => []
+    }
+  },
   data () {
     return {
       type: 'checkbox'
